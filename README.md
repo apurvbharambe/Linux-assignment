@@ -228,7 +228,7 @@ sudo systemctl daemon-reload
 sudo systemctl start showtime
 ```
 
-#### Step 5: Enable the "showtime" service to start automatically at boot
+#### Step 5: Enable the "showtime" service to start service automatically at time of boot
 ``` bash
 sudo systemctl enable showtime
 ```
@@ -244,7 +244,7 @@ journalctl -u showtime
 ```
 (-u, it allows you to specify a systemd unit name (such as a service name) to filter logs related to that specific unit)
 
-##### another way
+##### another way:
 ``` bash
 cat  showtime.txt
 ```
