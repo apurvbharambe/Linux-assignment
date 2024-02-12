@@ -4,26 +4,26 @@
 ```bash
 sudo apt-get update && sudo apt-get upgrade
 ```
-#### Step 2: install postfix - 
+#### Step 2: Install postfix - 
 ``` bash
 sudo apt-get install postfix
 ```
 ###### The first part of the Postfix installation is a text-based user interface. Use  keyboard to select "Internet Site" for the type of mail configuration.
 
-#### Step 3:  set app password in gmail
+#### Step 3:  Set app password in gmail
 
-#### Step 4: create file /etc/postfix/sasl/sasl_passwd - :  
+#### Step 4: Create file /etc/postfix/sasl/sasl_passwd - :  
 ``` bash
 sudo touch /etc/postfix/sasl/sasl_passwd
 ```
-#### Step 5: add Gmail address and app password to file:
+#### Step 5: Add Gmail address and app password to file:
 ``` bash 
 sudo nano /etc/postfix/sasl/sasl_passwd
 ```
 ##### [smtp.gmail.com]:587 my@gmail.com:password 
 ###### ( smtp.gmail.com is the address of the Gmail SMTP server and 587 is the SMTP port.)
 
-#### Step 6 : create hash database file of password
+#### Step 6 : Create hash database file of password
 ```bash
 sudo postmap /etc/postfix/sasl/sasl_passwd
 ```
