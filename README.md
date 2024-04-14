@@ -108,7 +108,7 @@ describe
 
 gunzip -k $(find /home -type f -name "*.gz" -print -quit 2>/dev/null)
 gunzip -k $(find / -type f -name "research.gz" -print -quit 2>/dev/null)
-find / -name "research.gz" -exec gunzip {} \;
+gunzip -k $(find /home -type f -name "*.gz" 2>/dev/null)
 
 
 
