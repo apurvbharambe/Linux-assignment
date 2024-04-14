@@ -109,54 +109,7 @@ gunzip -k $(find /home -type f -name "*.gz" -print -quit 2>/dev/null)
 gunzip -k $(find / -type f -name "research.gz" -print -quit 2>/dev/null)
 find / -name "research.gz" -exec gunzip {} \;
 ```
-
-#### Method 2:
-``` bash
-
-#!/bin/bash
-
-# Find the file named "research" with any compression extension in the Linux file system
-research_files=$(find / -type f -name "research.*" -print -quit 2>/dev/null)
-
-# Check if any "research" file is found
-if [ -z "$research_files" ]; then
-	echo "No 'research' file found."
-	exit 1
-fi
-
-# Iterate through each found file
-for file in $research_files; do
-	# Get the file extension
-	extension="${file##*.}"    # here we will get extension of file and it will get stored in variable extension 
-
-	# Determine the compression type based on the file extension (# Determine the compression type based on file extension and user proper command accordingly to uncompress that file)
-
-	case "$extension" in
-    	gz)
-        	echo "Compression type: gzip"
-        	# Uncompress using gzip
-        	gzip -d "$file"
-        	;;
-    	bz2)
-        	echo "Compression type: bzip2"
-        	# Uncompress using bzip2
-        	bzip2 -d "$file"
-        	;;
-    	zip)
-        	echo "Compression type: zip"
-        	# Unzip the file
-        	unzip "$file"
-        	;;
-    	*)
-        	echo "Unsupported compression type for file: $file"
-        	;;
-	esac
-done
-
-echo "All 'research' files uncompressed successfully."
 ```
-
-
 
 # 5. Configure your system in such a way that any user of your system creates a file then there should not be permission to do any activity in that file.
 ##### Note:- Don’t use the chmod command.
