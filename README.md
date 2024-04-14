@@ -104,6 +104,8 @@ describe
 # 4. Users can put a compressed file at any path of the linux file system. The name of the file will be research and the extension will be of compression type, example for gzip type extension will be .gz. You have to find the file and check the compression type and uncompress it.
 
 ``` bash
+# use any one of the below commands:
+
 gunzip -k $(find /home -type f -name "*.gz" -print -quit 2>/dev/null)
 gunzip -k $(find / -type f -name "research.gz" -print -quit 2>/dev/null)
 find / -name "research.gz" -exec gunzip {} \;
