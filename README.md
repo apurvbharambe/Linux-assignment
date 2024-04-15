@@ -4,7 +4,7 @@
 ```bash
 sudo apt-get update && sudo apt-get upgrade
 ```
-#### Step 2: Install postfix - 
+#### Step 2: Install postfix - "Postfix" is popular mail transfer agent (MTA) software. Postfix is widely used for routing and delivering email on Unix-like operating systems, including Linux.
 ``` bash
 sudo apt-get install postfix
 ```
